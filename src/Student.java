@@ -1,20 +1,38 @@
+/**
+ * The superclass of all Student subclasses Provides common functions compareTo
+ * and toString and defines abstract function tuitionDue
+ * 
+ * @author Jared Montalbo, Noah Turbin
+ *
+ */
+
 public abstract class Student implements Comparable {
    private String fname;
    private String lname;
    protected int credit;
+
+   /**
+    * Student constructor Assigns variables fname, lname, credit in this class
+    * 
+    * @param fname  first name of student
+    * @param lname  last name of student
+    * @param credit amount of credits student is taking
+    */
 
    public Student(String fname, String lname, int credit) {
       this.fname = fname;
       this.lname = lname;
       this.credit = credit;
 
-   } // constructor
+   }
 
-//must implement compareTo method because Student class implements the Comparable Interface
-//return 0 if fname and lname of the two students are equal,
-//return -1 if this fname and lname is < obj’s, return 1 if this fname and lname is > obj’s
-//Hint: use the compareToIgnoreCase methods of the String class to compare fname
-//and lname; compare the fname first, then lname; names are not case-sensitive;
+   /**
+    * Compares two Students names to see if they're equal
+    * 
+    * @param obj The student to be compared to
+    * @return int Returns 0 if student names are equal, Return -1 if fname and
+    *         lname is < obj, Return 1 if fname and lname is > obj
+    */
 
    public int compareTo(Object obj) {
       if (obj == null || !(obj instanceof Student)) {
@@ -45,11 +63,22 @@ public abstract class Student implements Comparable {
 
    }
 
-//return a string with fname, lname and credit hours; subclasses will be using this method.
+   /**
+    * Concatenates student's first name, last name, amount of credits and returns
+    * the product
+    * 
+    * @return Concatenated string
+    */
    public String toString() {
       return this.fname + " " + this.fname + " " + Integer.toString(this.credit);
    }
 
-//compute the tuition due; concrete implementation is required in the subclasses.
+   /**
+    * Compute the tuition due; concrete implementation is required in the
+    * subclasses.
+    * 
+    * @return an int of the amount of the tuition that is due
+    */
    public abstract int tuitionDue();
+
 }
