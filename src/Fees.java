@@ -6,5 +6,4 @@ public class Fees {
    public static final int PART_TIME_FEE = 846;
    public static final int FULL_TIME_FEE = 1441;
    public static final int INTERNATIONAL_FEE = 350;
-
 }

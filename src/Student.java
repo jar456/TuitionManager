@@ -41,22 +41,22 @@ public abstract class Student implements Comparable {
 
       Student s = (Student) obj;
 
-      if (this.fname.compareToIgnoreCase(s.fname) == 0 && this.lname.compareToIgnoreCase(s.lname) == 0) {
-         return 0;
+      if (this.fname.compareToIgnoreCase(s.fname) != 0) {
+         
+         if (this.fname.length() < s.fname.length()) {
+            return -1;
+         } else {
+            return 1;
+         }
       }
-
-      int FLAG_NAME_COMPARE = this.fname.compareToIgnoreCase(s.fname);
-      if (FLAG_NAME_COMPARE < 0) {
-         return -1;
-      } else if (FLAG_NAME_COMPARE > 0) {
-         return 1;
-      }
-
-      FLAG_NAME_COMPARE = this.lname.compareToIgnoreCase(s.lname);
-      if (FLAG_NAME_COMPARE < 0) {
-         return -1;
-      } else if (FLAG_NAME_COMPARE > 0) {
-         return 1;
+      
+      if (this.lname.compareToIgnoreCase(s.lname) != 0) {
+         
+         if (this.lname.length() < s.lname.length()) {
+            return -1;
+         } else {
+            return 1;
+         }
       }
 
       return 0;
@@ -70,7 +70,7 @@ public abstract class Student implements Comparable {
     * @return Concatenated string
     */
    public String toString() {
-      return this.fname + " " + this.fname + " " + Integer.toString(this.credit);
+      return this.fname + " " + this.lname + " " + Integer.toString(this.credit);
    }
 
    /**
