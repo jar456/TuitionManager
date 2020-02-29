@@ -1,5 +1,5 @@
 /**
- * Instate.java is a subclass of Student.java 
+ * Instate is a subclass of Student 
  * Instantiating an Instate student will calculate tuition based off instate fees
  * 
  * @author Jared Montalbo, Noah Turbin
@@ -34,16 +34,20 @@ public class Instate extends Student {
     */
 
    @Override
-   public int tuitionDue() {
-      // TODO Auto-generated method stub
-      
+   public int tuitionDue() {     
       // Check for part time or full time status
       if (this.credit < 12) {
          // Part time students don't qualify for funds
          return (this.credit * Fees.IN_STATE_TUTION_FEE) + Fees.PART_TIME_FEE;
-      } else {
-         // Will be full time student, qualifies for funds
-         return (this.credit * Fees.IN_STATE_TUTION_FEE) + Fees.FULL_TIME_FEE - this.funds;
+         
+      } else {     
+         int calculateCredit = this.credit;
+    
+         if (this.credit > 15) {
+            calculateCredit = 15;
+         }
+         
+         return (calculateCredit * Fees.IN_STATE_TUTION_FEE) + Fees.FULL_TIME_FEE - this.funds;
       }
    }
    
@@ -56,7 +60,7 @@ public class Instate extends Student {
    public static void main(String [] args) {
       Instate instate1 = new Instate("Jared", "Montalbo", 16, 100);
       System.out.println(instate1.toString() + " owes: " + instate1.tuitionDue());
-      // Tuition Amount: (16 * 433) + 1441 - 100 = 8269
+      // Tuition Amount: (15 * 433) + 1441 - 100 = 7836
       // Prints: Jared Montalbo 16 owes: 1774
       
       Instate instate2 = new Instate("Noah", "Turbin", 10, 200);
@@ -75,7 +79,6 @@ public class Instate extends Student {
       // Prints: Noah Turbinator 6 owes: 3444
       
       
-      
       System.out.println("Comparing Jared Montalbo to Jared Montalbo, Value: " + instate1.compareTo(instate3));
       // Since Jared Montalbo and Jared Montalbo is equal, value should be 0
       
@@ -89,7 +92,7 @@ public class Instate extends Student {
       // Since Turbin has a shorter last name then Turbinator, value should be -1
       
       System.out.println("Comparing Noah Turbin to Noah Turbinator, Value: " + instate4.compareTo(instate2));
-      // Since Turbin has a shorter last name then Turbinator, value should be -1
+      // Since Turbinator has a longer last name then Turbin, value should be 1
    }
 
 }
