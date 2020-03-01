@@ -20,9 +20,14 @@ public class Instate extends Student {
     * @param funds  funds student has been awarded
     */
    public Instate(String fname, String lname, int credit, int funds) {
-      super(fname, lname, credit);
       
-      this.funds = funds;
+	   super(fname, lname, credit);
+	   this.funds = funds;
+   
+	   if(credit<12) {
+		this.funds = 0;   
+	   }
+	   
    }
    
    /**
