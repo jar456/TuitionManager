@@ -43,7 +43,7 @@ public abstract class Student implements Comparable {
 
       if (this.fname.compareToIgnoreCase(s.fname) != 0) {
          
-         if (this.fname.length() < s.fname.length()) {
+         if (this.fname.compareToIgnoreCase(s.fname) < 0) {
             return -1;
          } else {
             return 1;
@@ -52,7 +52,7 @@ public abstract class Student implements Comparable {
       
       if (this.lname.compareToIgnoreCase(s.lname) != 0) {
          
-         if (this.lname.length() < s.lname.length()) {
+         if (this.lname.compareToIgnoreCase(s.lname) < 0) {
             return -1;
          } else {
             return 1;
@@ -61,7 +61,7 @@ public abstract class Student implements Comparable {
 
       return 0;
 
-   }
+   } //compareTo()
 
    /**
     * Concatenates student's first name, last name, amount of credits and returns
