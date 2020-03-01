@@ -52,6 +52,18 @@ public class Instate extends Student {
    }
    
    /**
+    * Returns the contents of the Instate class as a String.
+    * calls the toString() method in the Student superclass, then adds information specific
+    * to the Instate subclass. 
+    * @returns A String of the information of this Instate Student.
+    */
+   @Override
+   public String toString() {
+	      return super.toString() + " Instate, with the funds: " + Integer.toString(this.funds);
+	   }
+   
+   
+   /**
     * Instate.java testbed main
     * Used to test the functionality of the methods in variables in Instate.java
     * 

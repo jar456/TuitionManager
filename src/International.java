@@ -54,6 +54,18 @@ public class International extends Student {
          return (calculateCredit * Fees.INTERNAIONAL_TUITION_FEE) + Fees.INTERNATIONAL_FEE + Fees.FULL_TIME_FEE;
       }
    }
+
+   /**
+    * Returns the contents of the International class as a String.
+    * calls the toString() method in the Student superclass, then adds information specific
+    * to the International subclass. 
+    * @returns A String of the information of this International Student.
+    */
+   
+   public String toString() {
+	      return super.toString() + " International, an exchange student: " + String.valueOf(this.exchange);
+	   }
+
    
    /**
     * International.java testbed main
