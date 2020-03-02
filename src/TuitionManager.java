@@ -165,8 +165,8 @@ public class TuitionManager {
    } // run()
 
    /**
-    * Adds a teamMember containing no duplicate and a valid date to the team.
-    * Prints error message if it has an invalid date and returns. Prints error
+    * Adds a Student to the list. Checks for duplicates first.
+    * Prints error message if it has an invalid format. Prints error
     * message if duplicate is found and returns.
     * 
     * @return void
@@ -292,8 +292,8 @@ public class TuitionManager {
    }
 
    /**
-    * Removes a teamMember if a match is found in the team. Prints error message if
-    * it has an invalid date and returns. Prints error message if a team is not
+    * Removes a Student if a match is found in the list. Prints error message if
+    * it has a student is not there. 
     * found.
     * 
     * @return void
@@ -319,7 +319,7 @@ public class TuitionManager {
    }
 
    /**
-    * Prints a list of the teamMembers in the team. An empty team will print a
+    * Prints a list of the Students, their info, and their tuition amount. An empty List prints a
     * message that there are no members.
     * 
     * @return void
@@ -332,15 +332,9 @@ public class TuitionManager {
          return;
       }
 
-      // else...
-      // print "We have the following team members:
-      // the list...
-      // and finally "--end of the list--"
-
-      //System.out.println("We have the following team members:");
-      cs213.print(); // I assume this does what I think it does.
-      //System.out.println("--end of the list--");
-
+      
+      cs213.print();
+    
    } // print
    public static void main(String[] args) {
 
