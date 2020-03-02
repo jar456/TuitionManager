@@ -1,4 +1,8 @@
-
+/**
+ * This class contains various constants that are involved in the calculation of TuitionDue()
+ * 
+ * @author Jared Montalbo, Noah Turbin
+ */
 public class Fees {
 	public static final int IN_STATE_TUTION_FEE = 433;
 	public static final int OUT_OF_STATE_TUITION_FEE = 756;
