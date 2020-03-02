@@ -31,7 +31,7 @@ public class Instate extends Student {
    }
    
    /**
-    * Calculates amount of tuition the student owes if student is instate and
+    * Calculates amount of tuition the student owes if student is Instate and
     * returns the amount owed.
     * Overrides abstract function defined in Student.java
     * 
@@ -51,10 +51,17 @@ public class Instate extends Student {
          if (this.credit > 15) {
             calculateCredit = 15;
          }
+         if(((calculateCredit * Fees.IN_STATE_TUTION_FEE) + Fees.FULL_TIME_FEE)< this.funds ){
+        	 //handles if the funds given is larger than the fees
+         
+        	 return 0;
+        
+         }
          
          return (calculateCredit * Fees.IN_STATE_TUTION_FEE) + Fees.FULL_TIME_FEE - this.funds;
-      }
-   }
+         
+      }//else
+   }//tuitionDue()
    
    /**
     * Returns the contents of the Instate class as a String.
@@ -82,7 +89,7 @@ public class Instate extends Student {
       
       Instate instate2 = new Instate("Noah", "Turbin", 10, 200);
       System.out.println(instate2.toString() + " owes: " + instate2.tuitionDue());
-      // Tuition Amount: (10 * 433) + 846 = 5176 (Fees not qualified)
+      // Tuition Amount: (10 * 433) + 846 = 5176 (Funds do not qualify, because he is part time)
       // Prints: Noah Turbin 10 owes: 5176
       
       Instate instate3 = new Instate("Jared", "Montalbo", 12, 0);
@@ -92,7 +99,7 @@ public class Instate extends Student {
       
       Instate instate4 = new Instate("Noah", "Turbinator", 6, 0);
       System.out.println(instate4.toString() + " owes: " + instate4.tuitionDue());
-      // Tuition Amount: (6 * 433) + 846 = 6637
+      // Tuition Amount: (6 * 433) + 846 = 3444
       // Prints: Noah Turbinator 6 owes: 3444
       
       
@@ -100,15 +107,15 @@ public class Instate extends Student {
       // Since Jared Montalbo and Jared Montalbo is equal, value should be 0
       
       System.out.println("Comparing Jared Montalbo to Noah Turbin, Value: " + instate1.compareTo(instate2));
-      // Since Jared has a longer first name then Noah, value should be 1
+      // Since Jared comes earlier Noah, value should be -1
       
       System.out.println("Comparing Noah Turbin to Jared Montalbo, Value: " + instate2.compareTo(instate1));
-      // Since Noah has a shorter first name then Jared, value should be -1 
+      // Since Noah comes later then Jared, value should be 1 
       
       System.out.println("Comparing Noah Turbin to Noah Turbinator, Value: " + instate2.compareTo(instate4));
       // Since Turbin has a shorter last name then Turbinator, value should be -1
       
-      System.out.println("Comparing Noah Turbin to Noah Turbinator, Value: " + instate4.compareTo(instate2));
+      System.out.println("Comparing Noah Turbinator to Noah Turbin, Value: " + instate4.compareTo(instate2));
       // Since Turbinator has a longer last name then Turbin, value should be 1
    }
 
