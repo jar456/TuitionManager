@@ -27,7 +27,7 @@ public class TuitionManager {
     * @return void
     */
    public void run() {
-      System.out.println("Let's start a new team!");
+      System.out.println("Tuition Manager has started.");
 
       boolean done = false;
       while (!done) {
@@ -184,7 +184,7 @@ public class TuitionManager {
       String credit = st.nextToken();
       String data = st.nextToken();
 
-      Student s;
+      Student s = null;
       //check if credits is valid.
       //first, it must be an integer.
       //then, it must be a positive integer.
@@ -306,16 +306,16 @@ public class TuitionManager {
       // assign the second token, the last name
       String lname = st.nextToken();
 
-      Student s = new Student(fname , lname , 15);
+      Student s = new Outstate(fname , lname , 15, false);
       //make sure remove function only checks the names, and not the credit amount.
       
            if (cs213.remove(s)) {
-         System.out.println(s.toString() + " has been removed from the list.");
+         System.out.println(fname + " " + lname + " has been removed from the list.");
          return;
       }
 
       // if we get to here, then we could not find it in the list.
-      System.out.println(s.toString() + "could not be found in the list.");
+      System.out.println(fname + " " + lname + "could not be found in the list.");
    }
 
    /**
@@ -342,4 +342,10 @@ public class TuitionManager {
       //System.out.println("--end of the list--");
 
    } // print
+   public static void main(String[] args) {
+
+	   TuitionManager tuit = new TuitionManager();
+	   tuit.run();
+	   }
+
 } // ProjectManager

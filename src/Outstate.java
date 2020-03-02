@@ -62,18 +62,18 @@ public class Outstate extends Student{
        
 	   if(this.credit<12) {	//handle part time students.
 		   
-		   if(this.tristate) { //if from tristate, return the discounted rate.
+		   //if(this.tristate) { //if from tristate,
 			   
-			   return (this.credit * (Fees.OUT_OF_STATE_TUITION_FEE-200)) + Fees.PART_TIME_FEE;
-			   //returns part time, from tristate
-		   }
+			//   return (this.credit * (Fees.OUT_OF_STATE_TUITION_FEE)) + Fees.PART_TIME_FEE;
+			   //returns part time, from tristate (part timers don't get the discount!
+		   //}
 		   
-		   else {	
+		 //  else {	
 			
 			   return (this.credit * Fees.OUT_OF_STATE_TUITION_FEE) + Fees.PART_TIME_FEE;
 			   //return part time, not from tristate.
 			   
-		   } 
+		  // } 
 		   
 	   }//(this.credit<12). end of part time being handled.
 	   

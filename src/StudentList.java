@@ -186,7 +186,7 @@ public class StudentList {
    public void print() {
       // set up a for loop and call the toString() method
       for (int i = 0; i < this.numStudents; i++) {
-         System.out.println(this.students[i].toString());
+         System.out.println(this.students[i].toString() + " tuition due $" + this.students[i].tuitionDue());
       }
 
    }
@@ -197,7 +197,7 @@ public class StudentList {
 
       Instate instate1 = new Instate("Jared", "Montalbo", 16, 100);
       Instate instate4 = new Instate("Noah", "Turbinator", 6, 0);
-      Outstate out1 = new Outstate("Noah", "Montalbo", 16, true);
+      Outstate out1 = new Outstate("Jared", "Montalbo", 16, true);
       International inter2 = new International("Jared", "Turbin", 14, false);
       Outstate out5 = new Outstate("Jeremy", "Lin", 1, true);
 
