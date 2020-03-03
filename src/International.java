@@ -1,5 +1,5 @@
 /**
- * International is a subclass of Student This class calculates the tuition of
+ * International is a subclass of Student. This class calculates the tuition of
  * an international student and calls the superclass student to assign the
  * student information
  * 
