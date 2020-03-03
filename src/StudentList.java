@@ -181,7 +181,6 @@ public class StudentList {
 	/**
 	 * Prints the students in the student container
 	 * 
-	 * @return void
 	 */
 	public void print() {
 		// set up a for loop and call the toString() method
