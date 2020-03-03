@@ -197,7 +197,7 @@ public class TuitionManager {
            
       } 
       catch (Exception e) { 
-          System.out.println(e); 
+          System.out.println("incorrect format for credits"); 
           return; //? do i do this?
       } 
       
@@ -222,7 +222,7 @@ public class TuitionManager {
                
           } 
           catch (Exception e) { 
-              System.out.println(e); 
+              System.out.println("funding incorrect format"); 
               return; //? do i do this?
           } 
           
